@@ -1,6 +1,7 @@
 package com.csjohnlennon.desafioandroid.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -10,8 +11,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.csjohnlennon.desafioandroid.R;
 import com.csjohnlennon.desafioandroid.network.model.Repository;
+import com.csjohnlennon.desafioandroid.ui.activity.PullActivity;
+import com.csjohnlennon.desafioandroid.ui.activity.RepositorieView;
 
 import java.util.List;
 
@@ -22,33 +26,46 @@ public class RepositoryAdapter extends RecyclerView.Adapter<RepositoryAdapter.Re
 
     private Context context;
     private List<Repository> repositoryList;
+    private RepositorieView repositorieView;
 
     public RepositoryAdapter(Context context, List<Repository> repositoryList) {
-        this.context        = context;
-        this.repositoryList = repositoryList;
+        this.context = context;
+        this.repositoryList  = repositoryList;
     }
 
     @Override
     public void onBindViewHolder(RepositoryHolder holder, int position) {
 
-        Repository repository = repositoryList.get(position);
+        final Repository repository = repositoryList.get(position);
 
-        holder.tvName.setText(repository.getName());
-        holder.tvDescription.setText(repository.getDescription());
-        holder.tvStargazersCount.setText(String.valueOf(repository.getStargazersCount()));
-        holder.tvForksCount.setText(String.valueOf(repository.getForks()));
+        holder.cvRepository.setTag(repository);
+        holder.tvName.setText(repository.name);
+        holder.tvDescription.setText(repository.description);
+        holder.tvStargazersCount.setText("" + repository.stargazers_count);
+        holder.tvForksCount.setText("" + repository.forks);
+        holder.tvLogin.setText("" + repository.owner.login);
+        Glide.with(context)
+                .load((!repository.owner.avatarUrl.isEmpty()) ? repository.owner.avatarUrl : R.drawable.ic_user)
+                .into(holder.ivAvatarUrl);
 
-        //if(!Owner.getOwner().getAvatar_url().equals(""))
-            //Glide.with(context).load(repository.getOwner().getAvatar_url()).fitCenter().into(holder.ivAvatar_url);
-
+        holder.cvRepository.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, PullActivity.class);
+                intent.putExtra("repository", repository);
+                context.startActivity(intent);
+            }
+        });
 
     }
 
     public void add(List<Repository> rList) {
-        for(int i = 0; i < rList.size(); i++) {
+
+        for (int i = 0; i < rList.size(); i++) {
             this.repositoryList.add(rList.get(i));
         }
         this.notifyDataSetChanged();
+
     }
 
     public void clear() {
