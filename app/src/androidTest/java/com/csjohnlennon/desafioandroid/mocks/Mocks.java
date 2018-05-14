@@ -2,6 +2,349 @@ package com.csjohnlennon.desafioandroid.mocks;
 
 public class Mocks {
 
+    public static String FAIL_SEARCH_PULLS = "{\n" +
+            "  \"message\": \"Not Found\",\n" +
+            "  \"documentation_url\": \"https://developer.github.com/v3/pulls/#list-pull-requests\"\n" +
+            "}";
+
+    public static String SUCCESS_SEARCH_PULLS = "[\n" +
+            "  {\n" +
+            "    \"url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/pulls/747\",\n" +
+            "    \"id\": 183273002,\n" +
+            "    \"html_url\": \"https://github.com/iluwatar/java-design-patterns/pull/747\",\n" +
+            "    \"diff_url\": \"https://github.com/iluwatar/java-design-patterns/pull/747.diff\",\n" +
+            "    \"patch_url\": \"https://github.com/iluwatar/java-design-patterns/pull/747.patch\",\n" +
+            "    \"issue_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/issues/747\",\n" +
+            "    \"number\": 747,\n" +
+            "    \"state\": \"open\",\n" +
+            "    \"locked\": false,\n" +
+            "    \"title\": \"Combinator pattern #499\",\n" +
+            "    \"user\": {\n" +
+            "      \"login\": \"asavelev1\",\n" +
+            "      \"id\": 38261324,\n" +
+            "      \"avatar_url\": \"https://avatars2.githubusercontent.com/u/38261324?v=4\",\n" +
+            "      \"gravatar_id\": \"\",\n" +
+            "      \"url\": \"https://api.github.com/users/asavelev1\",\n" +
+            "      \"html_url\": \"https://github.com/asavelev1\",\n" +
+            "      \"followers_url\": \"https://api.github.com/users/asavelev1/followers\",\n" +
+            "      \"following_url\": \"https://api.github.com/users/asavelev1/following{/other_user}\",\n" +
+            "      \"gists_url\": \"https://api.github.com/users/asavelev1/gists{/gist_id}\",\n" +
+            "      \"starred_url\": \"https://api.github.com/users/asavelev1/starred{/owner}{/repo}\",\n" +
+            "      \"subscriptions_url\": \"https://api.github.com/users/asavelev1/subscriptions\",\n" +
+            "      \"organizations_url\": \"https://api.github.com/users/asavelev1/orgs\",\n" +
+            "      \"repos_url\": \"https://api.github.com/users/asavelev1/repos\",\n" +
+            "      \"events_url\": \"https://api.github.com/users/asavelev1/events{/privacy}\",\n" +
+            "      \"received_events_url\": \"https://api.github.com/users/asavelev1/received_events\",\n" +
+            "      \"type\": \"User\",\n" +
+            "      \"site_admin\": false\n" +
+            "    },\n" +
+            "    \"body\": \"- Implementation of the Combinator pattern\\r\\nWatch only last commit.\",\n" +
+            "    \"created_at\": \"2018-04-22T13:24:16Z\",\n" +
+            "    \"updated_at\": \"2018-05-09T05:15:55Z\",\n" +
+            "    \"closed_at\": null,\n" +
+            "    \"merged_at\": null,\n" +
+            "    \"merge_commit_sha\": \"7042b2af548ed1c5d72af89f567bef7aa34ec630\",\n" +
+            "    \"assignee\": null,\n" +
+            "    \"assignees\": [],\n" +
+            "    \"requested_reviewers\": [\n" +
+            "      {\n" +
+            "        \"login\": \"npathai\",\n" +
+            "        \"id\": 1792515,\n" +
+            "        \"avatar_url\": \"https://avatars2.githubusercontent.com/u/1792515?v=4\",\n" +
+            "        \"gravatar_id\": \"\",\n" +
+            "        \"url\": \"https://api.github.com/users/npathai\",\n" +
+            "        \"html_url\": \"https://github.com/npathai\",\n" +
+            "        \"followers_url\": \"https://api.github.com/users/npathai/followers\",\n" +
+            "        \"following_url\": \"https://api.github.com/users/npathai/following{/other_user}\",\n" +
+            "        \"gists_url\": \"https://api.github.com/users/npathai/gists{/gist_id}\",\n" +
+            "        \"starred_url\": \"https://api.github.com/users/npathai/starred{/owner}{/repo}\",\n" +
+            "        \"subscriptions_url\": \"https://api.github.com/users/npathai/subscriptions\",\n" +
+            "        \"organizations_url\": \"https://api.github.com/users/npathai/orgs\",\n" +
+            "        \"repos_url\": \"https://api.github.com/users/npathai/repos\",\n" +
+            "        \"events_url\": \"https://api.github.com/users/npathai/events{/privacy}\",\n" +
+            "        \"received_events_url\": \"https://api.github.com/users/npathai/received_events\",\n" +
+            "        \"type\": \"User\",\n" +
+            "        \"site_admin\": false\n" +
+            "      }\n" +
+            "    ],\n" +
+            "    \"requested_teams\": [],\n" +
+            "    \"labels\": [],\n" +
+            "    \"milestone\": null,\n" +
+            "    \"commits_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/pulls/747/commits\",\n" +
+            "    \"review_comments_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/pulls/747/comments\",\n" +
+            "    \"review_comment_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/pulls/comments{/number}\",\n" +
+            "    \"comments_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/issues/747/comments\",\n" +
+            "    \"statuses_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/statuses/9e0acb58dfca25fa56bfe5868d73c1ac005925ae\",\n" +
+            "    \"head\": {\n" +
+            "      \"label\": \"asavelev1:master\",\n" +
+            "      \"ref\": \"master\",\n" +
+            "      \"sha\": \"9e0acb58dfca25fa56bfe5868d73c1ac005925ae\",\n" +
+            "      \"user\": {\n" +
+            "        \"login\": \"asavelev1\",\n" +
+            "        \"id\": 38261324,\n" +
+            "        \"avatar_url\": \"https://avatars2.githubusercontent.com/u/38261324?v=4\",\n" +
+            "        \"gravatar_id\": \"\",\n" +
+            "        \"url\": \"https://api.github.com/users/asavelev1\",\n" +
+            "        \"html_url\": \"https://github.com/asavelev1\",\n" +
+            "        \"followers_url\": \"https://api.github.com/users/asavelev1/followers\",\n" +
+            "        \"following_url\": \"https://api.github.com/users/asavelev1/following{/other_user}\",\n" +
+            "        \"gists_url\": \"https://api.github.com/users/asavelev1/gists{/gist_id}\",\n" +
+            "        \"starred_url\": \"https://api.github.com/users/asavelev1/starred{/owner}{/repo}\",\n" +
+            "        \"subscriptions_url\": \"https://api.github.com/users/asavelev1/subscriptions\",\n" +
+            "        \"organizations_url\": \"https://api.github.com/users/asavelev1/orgs\",\n" +
+            "        \"repos_url\": \"https://api.github.com/users/asavelev1/repos\",\n" +
+            "        \"events_url\": \"https://api.github.com/users/asavelev1/events{/privacy}\",\n" +
+            "        \"received_events_url\": \"https://api.github.com/users/asavelev1/received_events\",\n" +
+            "        \"type\": \"User\",\n" +
+            "        \"site_admin\": false\n" +
+            "      },\n" +
+            "      \"repo\": {\n" +
+            "        \"id\": 129652834,\n" +
+            "        \"name\": \"java-design-patterns\",\n" +
+            "        \"full_name\": \"asavelev1/java-design-patterns\",\n" +
+            "        \"owner\": {\n" +
+            "          \"login\": \"asavelev1\",\n" +
+            "          \"id\": 38261324,\n" +
+            "          \"avatar_url\": \"https://avatars2.githubusercontent.com/u/38261324?v=4\",\n" +
+            "          \"gravatar_id\": \"\",\n" +
+            "          \"url\": \"https://api.github.com/users/asavelev1\",\n" +
+            "          \"html_url\": \"https://github.com/asavelev1\",\n" +
+            "          \"followers_url\": \"https://api.github.com/users/asavelev1/followers\",\n" +
+            "          \"following_url\": \"https://api.github.com/users/asavelev1/following{/other_user}\",\n" +
+            "          \"gists_url\": \"https://api.github.com/users/asavelev1/gists{/gist_id}\",\n" +
+            "          \"starred_url\": \"https://api.github.com/users/asavelev1/starred{/owner}{/repo}\",\n" +
+            "          \"subscriptions_url\": \"https://api.github.com/users/asavelev1/subscriptions\",\n" +
+            "          \"organizations_url\": \"https://api.github.com/users/asavelev1/orgs\",\n" +
+            "          \"repos_url\": \"https://api.github.com/users/asavelev1/repos\",\n" +
+            "          \"events_url\": \"https://api.github.com/users/asavelev1/events{/privacy}\",\n" +
+            "          \"received_events_url\": \"https://api.github.com/users/asavelev1/received_events\",\n" +
+            "          \"type\": \"User\",\n" +
+            "          \"site_admin\": false\n" +
+            "        },\n" +
+            "        \"private\": false,\n" +
+            "        \"html_url\": \"https://github.com/asavelev1/java-design-patterns\",\n" +
+            "        \"description\": \"Design patterns implemented in Java\",\n" +
+            "        \"fork\": true,\n" +
+            "        \"url\": \"https://api.github.com/repos/asavelev1/java-design-patterns\",\n" +
+            "        \"forks_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/forks\",\n" +
+            "        \"keys_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/keys{/key_id}\",\n" +
+            "        \"collaborators_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/collaborators{/collaborator}\",\n" +
+            "        \"teams_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/teams\",\n" +
+            "        \"hooks_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/hooks\",\n" +
+            "        \"issue_events_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/issues/events{/number}\",\n" +
+            "        \"events_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/events\",\n" +
+            "        \"assignees_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/assignees{/user}\",\n" +
+            "        \"branches_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/branches{/branch}\",\n" +
+            "        \"tags_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/tags\",\n" +
+            "        \"blobs_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/git/blobs{/sha}\",\n" +
+            "        \"git_tags_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/git/tags{/sha}\",\n" +
+            "        \"git_refs_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/git/refs{/sha}\",\n" +
+            "        \"trees_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/git/trees{/sha}\",\n" +
+            "        \"statuses_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/statuses/{sha}\",\n" +
+            "        \"languages_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/languages\",\n" +
+            "        \"stargazers_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/stargazers\",\n" +
+            "        \"contributors_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/contributors\",\n" +
+            "        \"subscribers_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/subscribers\",\n" +
+            "        \"subscription_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/subscription\",\n" +
+            "        \"commits_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/commits{/sha}\",\n" +
+            "        \"git_commits_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/git/commits{/sha}\",\n" +
+            "        \"comments_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/comments{/number}\",\n" +
+            "        \"issue_comment_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/issues/comments{/number}\",\n" +
+            "        \"contents_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/contents/{+path}\",\n" +
+            "        \"compare_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/compare/{base}...{head}\",\n" +
+            "        \"merges_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/merges\",\n" +
+            "        \"archive_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/{archive_format}{/ref}\",\n" +
+            "        \"downloads_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/downloads\",\n" +
+            "        \"issues_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/issues{/number}\",\n" +
+            "        \"pulls_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/pulls{/number}\",\n" +
+            "        \"milestones_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/milestones{/number}\",\n" +
+            "        \"notifications_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/notifications{?since,all,participating}\",\n" +
+            "        \"labels_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/labels{/name}\",\n" +
+            "        \"releases_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/releases{/id}\",\n" +
+            "        \"deployments_url\": \"https://api.github.com/repos/asavelev1/java-design-patterns/deployments\",\n" +
+            "        \"created_at\": \"2018-04-15T21:33:23Z\",\n" +
+            "        \"updated_at\": \"2018-04-22T13:19:36Z\",\n" +
+            "        \"pushed_at\": \"2018-04-22T13:19:34Z\",\n" +
+            "        \"git_url\": \"git://github.com/asavelev1/java-design-patterns.git\",\n" +
+            "        \"ssh_url\": \"git@github.com:asavelev1/java-design-patterns.git\",\n" +
+            "        \"clone_url\": \"https://github.com/asavelev1/java-design-patterns.git\",\n" +
+            "        \"svn_url\": \"https://github.com/asavelev1/java-design-patterns\",\n" +
+            "        \"homepage\": \"http://java-design-patterns.com\",\n" +
+            "        \"size\": 17643,\n" +
+            "        \"stargazers_count\": 0,\n" +
+            "        \"watchers_count\": 0,\n" +
+            "        \"language\": \"Java\",\n" +
+            "        \"has_issues\": false,\n" +
+            "        \"has_projects\": true,\n" +
+            "        \"has_downloads\": true,\n" +
+            "        \"has_wiki\": true,\n" +
+            "        \"has_pages\": false,\n" +
+            "        \"forks_count\": 0,\n" +
+            "        \"mirror_url\": null,\n" +
+            "        \"archived\": false,\n" +
+            "        \"open_issues_count\": 0,\n" +
+            "        \"license\": {\n" +
+            "          \"key\": \"mit\",\n" +
+            "          \"name\": \"MIT License\",\n" +
+            "          \"spdx_id\": \"MIT\",\n" +
+            "          \"url\": \"https://api.github.com/licenses/mit\"\n" +
+            "        },\n" +
+            "        \"forks\": 0,\n" +
+            "        \"open_issues\": 0,\n" +
+            "        \"watchers\": 0,\n" +
+            "        \"default_branch\": \"master\"\n" +
+            "      }\n" +
+            "    },\n" +
+            "    \"base\": {\n" +
+            "      \"label\": \"iluwatar:master\",\n" +
+            "      \"ref\": \"master\",\n" +
+            "      \"sha\": \"998600f09e36e8fbbb38e4775fe1a8efcdd9f9c1\",\n" +
+            "      \"user\": {\n" +
+            "        \"login\": \"iluwatar\",\n" +
+            "        \"id\": 582346,\n" +
+            "        \"avatar_url\": \"https://avatars1.githubusercontent.com/u/582346?v=4\",\n" +
+            "        \"gravatar_id\": \"\",\n" +
+            "        \"url\": \"https://api.github.com/users/iluwatar\",\n" +
+            "        \"html_url\": \"https://github.com/iluwatar\",\n" +
+            "        \"followers_url\": \"https://api.github.com/users/iluwatar/followers\",\n" +
+            "        \"following_url\": \"https://api.github.com/users/iluwatar/following{/other_user}\",\n" +
+            "        \"gists_url\": \"https://api.github.com/users/iluwatar/gists{/gist_id}\",\n" +
+            "        \"starred_url\": \"https://api.github.com/users/iluwatar/starred{/owner}{/repo}\",\n" +
+            "        \"subscriptions_url\": \"https://api.github.com/users/iluwatar/subscriptions\",\n" +
+            "        \"organizations_url\": \"https://api.github.com/users/iluwatar/orgs\",\n" +
+            "        \"repos_url\": \"https://api.github.com/users/iluwatar/repos\",\n" +
+            "        \"events_url\": \"https://api.github.com/users/iluwatar/events{/privacy}\",\n" +
+            "        \"received_events_url\": \"https://api.github.com/users/iluwatar/received_events\",\n" +
+            "        \"type\": \"User\",\n" +
+            "        \"site_admin\": false\n" +
+            "      },\n" +
+            "      \"repo\": {\n" +
+            "        \"id\": 22790488,\n" +
+            "        \"name\": \"java-design-patterns\",\n" +
+            "        \"full_name\": \"iluwatar/java-design-patterns\",\n" +
+            "        \"owner\": {\n" +
+            "          \"login\": \"iluwatar\",\n" +
+            "          \"id\": 582346,\n" +
+            "          \"avatar_url\": \"https://avatars1.githubusercontent.com/u/582346?v=4\",\n" +
+            "          \"gravatar_id\": \"\",\n" +
+            "          \"url\": \"https://api.github.com/users/iluwatar\",\n" +
+            "          \"html_url\": \"https://github.com/iluwatar\",\n" +
+            "          \"followers_url\": \"https://api.github.com/users/iluwatar/followers\",\n" +
+            "          \"following_url\": \"https://api.github.com/users/iluwatar/following{/other_user}\",\n" +
+            "          \"gists_url\": \"https://api.github.com/users/iluwatar/gists{/gist_id}\",\n" +
+            "          \"starred_url\": \"https://api.github.com/users/iluwatar/starred{/owner}{/repo}\",\n" +
+            "          \"subscriptions_url\": \"https://api.github.com/users/iluwatar/subscriptions\",\n" +
+            "          \"organizations_url\": \"https://api.github.com/users/iluwatar/orgs\",\n" +
+            "          \"repos_url\": \"https://api.github.com/users/iluwatar/repos\",\n" +
+            "          \"events_url\": \"https://api.github.com/users/iluwatar/events{/privacy}\",\n" +
+            "          \"received_events_url\": \"https://api.github.com/users/iluwatar/received_events\",\n" +
+            "          \"type\": \"User\",\n" +
+            "          \"site_admin\": false\n" +
+            "        },\n" +
+            "        \"private\": false,\n" +
+            "        \"html_url\": \"https://github.com/iluwatar/java-design-patterns\",\n" +
+            "        \"description\": \"Design patterns implemented in Java\",\n" +
+            "        \"fork\": false,\n" +
+            "        \"url\": \"https://api.github.com/repos/iluwatar/java-design-patterns\",\n" +
+            "        \"forks_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/forks\",\n" +
+            "        \"keys_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/keys{/key_id}\",\n" +
+            "        \"collaborators_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/collaborators{/collaborator}\",\n" +
+            "        \"teams_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/teams\",\n" +
+            "        \"hooks_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/hooks\",\n" +
+            "        \"issue_events_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/issues/events{/number}\",\n" +
+            "        \"events_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/events\",\n" +
+            "        \"assignees_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/assignees{/user}\",\n" +
+            "        \"branches_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/branches{/branch}\",\n" +
+            "        \"tags_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/tags\",\n" +
+            "        \"blobs_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/git/blobs{/sha}\",\n" +
+            "        \"git_tags_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/git/tags{/sha}\",\n" +
+            "        \"git_refs_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/git/refs{/sha}\",\n" +
+            "        \"trees_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/git/trees{/sha}\",\n" +
+            "        \"statuses_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/statuses/{sha}\",\n" +
+            "        \"languages_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/languages\",\n" +
+            "        \"stargazers_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/stargazers\",\n" +
+            "        \"contributors_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/contributors\",\n" +
+            "        \"subscribers_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/subscribers\",\n" +
+            "        \"subscription_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/subscription\",\n" +
+            "        \"commits_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/commits{/sha}\",\n" +
+            "        \"git_commits_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/git/commits{/sha}\",\n" +
+            "        \"comments_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/comments{/number}\",\n" +
+            "        \"issue_comment_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/issues/comments{/number}\",\n" +
+            "        \"contents_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/contents/{+path}\",\n" +
+            "        \"compare_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/compare/{base}...{head}\",\n" +
+            "        \"merges_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/merges\",\n" +
+            "        \"archive_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/{archive_format}{/ref}\",\n" +
+            "        \"downloads_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/downloads\",\n" +
+            "        \"issues_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/issues{/number}\",\n" +
+            "        \"pulls_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/pulls{/number}\",\n" +
+            "        \"milestones_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/milestones{/number}\",\n" +
+            "        \"notifications_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/notifications{?since,all,participating}\",\n" +
+            "        \"labels_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/labels{/name}\",\n" +
+            "        \"releases_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/releases{/id}\",\n" +
+            "        \"deployments_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/deployments\",\n" +
+            "        \"created_at\": \"2014-08-09T16:45:18Z\",\n" +
+            "        \"updated_at\": \"2018-05-11T14:37:12Z\",\n" +
+            "        \"pushed_at\": \"2018-05-10T06:55:30Z\",\n" +
+            "        \"git_url\": \"git://github.com/iluwatar/java-design-patterns.git\",\n" +
+            "        \"ssh_url\": \"git@github.com:iluwatar/java-design-patterns.git\",\n" +
+            "        \"clone_url\": \"https://github.com/iluwatar/java-design-patterns.git\",\n" +
+            "        \"svn_url\": \"https://github.com/iluwatar/java-design-patterns\",\n" +
+            "        \"homepage\": \"http://java-design-patterns.com\",\n" +
+            "        \"size\": 17599,\n" +
+            "        \"stargazers_count\": 33291,\n" +
+            "        \"watchers_count\": 33291,\n" +
+            "        \"language\": \"Java\",\n" +
+            "        \"has_issues\": true,\n" +
+            "        \"has_projects\": false,\n" +
+            "        \"has_downloads\": true,\n" +
+            "        \"has_wiki\": true,\n" +
+            "        \"has_pages\": true,\n" +
+            "        \"forks_count\": 10756,\n" +
+            "        \"mirror_url\": null,\n" +
+            "        \"archived\": false,\n" +
+            "        \"open_issues_count\": 173,\n" +
+            "        \"license\": {\n" +
+            "          \"key\": \"mit\",\n" +
+            "          \"name\": \"MIT License\",\n" +
+            "          \"spdx_id\": \"MIT\",\n" +
+            "          \"url\": \"https://api.github.com/licenses/mit\"\n" +
+            "        },\n" +
+            "        \"forks\": 10756,\n" +
+            "        \"open_issues\": 173,\n" +
+            "        \"watchers\": 33291,\n" +
+            "        \"default_branch\": \"master\"\n" +
+            "      }\n" +
+            "    },\n" +
+            "    \"_links\": {\n" +
+            "      \"self\": {\n" +
+            "        \"href\": \"https://api.github.com/repos/iluwatar/java-design-patterns/pulls/747\"\n" +
+            "      },\n" +
+            "      \"html\": {\n" +
+            "        \"href\": \"https://github.com/iluwatar/java-design-patterns/pull/747\"\n" +
+            "      },\n" +
+            "      \"issue\": {\n" +
+            "        \"href\": \"https://api.github.com/repos/iluwatar/java-design-patterns/issues/747\"\n" +
+            "      },\n" +
+            "      \"comments\": {\n" +
+            "        \"href\": \"https://api.github.com/repos/iluwatar/java-design-patterns/issues/747/comments\"\n" +
+            "      },\n" +
+            "      \"review_comments\": {\n" +
+            "        \"href\": \"https://api.github.com/repos/iluwatar/java-design-patterns/pulls/747/comments\"\n" +
+            "      },\n" +
+            "      \"review_comment\": {\n" +
+            "        \"href\": \"https://api.github.com/repos/iluwatar/java-design-patterns/pulls/comments{/number}\"\n" +
+            "      },\n" +
+            "      \"commits\": {\n" +
+            "        \"href\": \"https://api.github.com/repos/iluwatar/java-design-patterns/pulls/747/commits\"\n" +
+            "      },\n" +
+            "      \"statuses\": {\n" +
+            "        \"href\": \"https://api.github.com/repos/iluwatar/java-design-patterns/statuses/9e0acb58dfca25fa56bfe5868d73c1ac005925ae\"\n" +
+            "      }\n" +
+            "    },\n" +
+            "    \"author_association\": \"NONE\"\n" +
+            "  }\n" +
+            "]";
+
     public static String SUCCESS_SEARCH_REPOSITORY = "{\n" +
             "  \"total_count\": 4655076,\n" +
             "  \"incomplete_results\": false,\n" +
@@ -591,122 +934,122 @@ public class Mocks {
             "  ]\n" +
             "}\n";
 
-    public static String SINGLE_SUCCESS_SEARCH_REPOSITORY = "{\n"+
-            "  \"total_count\": 4653311,\n"+
-            "  \"incomplete_results\": false,\n"+
-            "  \"items\": [\n"+
-            "    {\n"+
-            "      \"id\": 22790488,\n"+
-            "      \"name\": \"java-design-patterns\",\n"+
-            "      \"full_name\": \"iluwatar/java-design-patterns\",\n"+
-            "      \"owner\": {\n"+
-            "        \"login\": \"iluwatar\",\n"+
-            "        \"id\": 582346,\n"+
-            "        \"avatar_url\": \"https://avatars1.githubusercontent.com/u/582346?v=4\",\n"+
-            "        \"gravatar_id\": \"\",\n"+
-            "        \"url\": \"https://api.github.com/users/iluwatar\",\n"+
-            "        \"html_url\": \"https://github.com/iluwatar\",\n"+
-            "        \"followers_url\": \"https://api.github.com/users/iluwatar/followers\",\n"+
-            "        \"following_url\": \"https://api.github.com/users/iluwatar/following{/other_user}\",\n"+
-            "        \"gists_url\": \"https://api.github.com/users/iluwatar/gists{/gist_id}\",\n"+
-            "        \"starred_url\": \"https://api.github.com/users/iluwatar/starred{/owner}{/repo}\",\n"+
-            "        \"subscriptions_url\": \"https://api.github.com/users/iluwatar/subscriptions\",\n"+
-            "        \"organizations_url\": \"https://api.github.com/users/iluwatar/orgs\",\n"+
-            "        \"repos_url\": \"https://api.github.com/users/iluwatar/repos\",\n"+
-            "        \"events_url\": \"https://api.github.com/users/iluwatar/events{/privacy}\",\n"+
-            "        \"received_events_url\": \"https://api.github.com/users/iluwatar/received_events\",\n"+
-            "        \"type\": \"User\",\n"+
-            "        \"site_admin\": false\n"+
-            "      },\n"+
-            "      \"private\": false,\n"+
-            "      \"html_url\": \"https://github.com/iluwatar/java-design-patterns\",\n"+
-            "      \"description\": \"Design patterns implemented in Java\",\n"+
-            "      \"fork\": false,\n"+
-            "      \"url\": \"https://api.github.com/repos/iluwatar/java-design-patterns\",\n"+
-            "      \"forks_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/forks\",\n"+
-            "      \"keys_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/keys{/key_id}\",\n"+
-            "      \"collaborators_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/collaborators{/collaborator}\",\n"+
-            "      \"teams_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/teams\",\n"+
-            "      \"hooks_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/hooks\",\n"+
-            "      \"issue_events_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/issues/events{/number}\",\n"+
-            "      \"events_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/events\",\n"+
-            "      \"assignees_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/assignees{/user}\",\n"+
-            "      \"branches_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/branches{/branch}\",\n"+
-            "      \"tags_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/tags\",\n"+
-            "      \"blobs_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/git/blobs{/sha}\",\n"+
-            "      \"git_tags_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/git/tags{/sha}\",\n"+
-            "      \"git_refs_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/git/refs{/sha}\",\n"+
-            "      \"trees_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/git/trees{/sha}\",\n"+
-            "      \"statuses_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/statuses/{sha}\",\n"+
-            "      \"languages_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/languages\",\n"+
-            "      \"stargazers_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/stargazers\",\n"+
-            "      \"contributors_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/contributors\",\n"+
-            "      \"subscribers_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/subscribers\",\n"+
-            "      \"subscription_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/subscription\",\n"+
-            "      \"commits_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/commits{/sha}\",\n"+
-            "      \"git_commits_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/git/commits{/sha}\",\n"+
-            "      \"comments_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/comments{/number}\",\n"+
-            "      \"issue_comment_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/issues/comments{/number}\",\n"+
-            "      \"contents_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/contents/{+path}\",\n"+
-            "      \"compare_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/compare/{base}...{head}\",\n"+
-            "      \"merges_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/merges\",\n"+
-            "      \"archive_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/{archive_format}{/ref}\",\n"+
-            "      \"downloads_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/downloads\",\n"+
-            "      \"issues_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/issues{/number}\",\n"+
-            "      \"pulls_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/pulls{/number}\",\n"+
-            "      \"milestones_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/milestones{/number}\",\n"+
-            "      \"notifications_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/notifications{?since,all,participating}\",\n"+
-            "      \"labels_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/labels{/name}\",\n"+
-            "      \"releases_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/releases{/id}\",\n"+
-            "      \"deployments_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/deployments\",\n"+
-            "      \"created_at\": \"2014-08-09T16:45:18Z\",\n"+
-            "      \"updated_at\": \"2018-05-10T12:57:08Z\",\n"+
-            "      \"pushed_at\": \"2018-05-10T06:55:30Z\",\n"+
-            "      \"git_url\": \"git://github.com/iluwatar/java-design-patterns.git\",\n"+
-            "      \"ssh_url\": \"git@github.com:iluwatar/java-design-patterns.git\",\n"+
-            "      \"clone_url\": \"https://github.com/iluwatar/java-design-patterns.git\",\n"+
-            "      \"svn_url\": \"https://github.com/iluwatar/java-design-patterns\",\n"+
-            "      \"homepage\": \"http://java-design-patterns.com\",\n"+
-            "      \"size\": 17599,\n"+
-            "      \"stargazers_count\": 33238,\n"+
-            "      \"watchers_count\": 33238,\n"+
-            "      \"language\": \"Java\",\n"+
-            "      \"has_issues\": true,\n"+
-            "      \"has_projects\": false,\n"+
-            "      \"has_downloads\": true,\n"+
-            "      \"has_wiki\": true,\n"+
-            "      \"has_pages\": true,\n"+
-            "      \"forks_count\": 10735,\n"+
-            "      \"mirror_url\": null,\n"+
-            "      \"archived\": false,\n"+
-            "      \"open_issues_count\": 173,\n"+
-            "      \"license\": {\n"+
-            "        \"key\": \"mit\",\n"+
-            "        \"name\": \"MIT License\",\n"+
-            "        \"spdx_id\": \"MIT\",\n"+
-            "        \"url\": \"https://api.github.com/licenses/mit\"\n"+
-            "      },\n"+
-            "      \"forks\": 10735,\n"+
-            "      \"open_issues\": 173,\n"+
-            "      \"watchers\": 33238,\n"+
-            "      \"default_branch\": \"master\",\n"+
-            "      \"score\": 1.0\n"+
-            "    }\n"+
-            "  ]\n"+
+    public static String SINGLE_SUCCESS_SEARCH_REPOSITORY = "{\n" +
+            "  \"total_count\": 4653311,\n" +
+            "  \"incomplete_results\": false,\n" +
+            "  \"items\": [\n" +
+            "    {\n" +
+            "      \"id\": 22790488,\n" +
+            "      \"name\": \"java-design-patterns\",\n" +
+            "      \"full_name\": \"iluwatar/java-design-patterns\",\n" +
+            "      \"owner\": {\n" +
+            "        \"login\": \"iluwatar\",\n" +
+            "        \"id\": 582346,\n" +
+            "        \"avatar_url\": \"https://avatars1.githubusercontent.com/u/582346?v=4\",\n" +
+            "        \"gravatar_id\": \"\",\n" +
+            "        \"url\": \"https://api.github.com/users/iluwatar\",\n" +
+            "        \"html_url\": \"https://github.com/iluwatar\",\n" +
+            "        \"followers_url\": \"https://api.github.com/users/iluwatar/followers\",\n" +
+            "        \"following_url\": \"https://api.github.com/users/iluwatar/following{/other_user}\",\n" +
+            "        \"gists_url\": \"https://api.github.com/users/iluwatar/gists{/gist_id}\",\n" +
+            "        \"starred_url\": \"https://api.github.com/users/iluwatar/starred{/owner}{/repo}\",\n" +
+            "        \"subscriptions_url\": \"https://api.github.com/users/iluwatar/subscriptions\",\n" +
+            "        \"organizations_url\": \"https://api.github.com/users/iluwatar/orgs\",\n" +
+            "        \"repos_url\": \"https://api.github.com/users/iluwatar/repos\",\n" +
+            "        \"events_url\": \"https://api.github.com/users/iluwatar/events{/privacy}\",\n" +
+            "        \"received_events_url\": \"https://api.github.com/users/iluwatar/received_events\",\n" +
+            "        \"type\": \"User\",\n" +
+            "        \"site_admin\": false\n" +
+            "      },\n" +
+            "      \"private\": false,\n" +
+            "      \"html_url\": \"https://github.com/iluwatar/java-design-patterns\",\n" +
+            "      \"description\": \"Design patterns implemented in Java\",\n" +
+            "      \"fork\": false,\n" +
+            "      \"url\": \"https://api.github.com/repos/iluwatar/java-design-patterns\",\n" +
+            "      \"forks_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/forks\",\n" +
+            "      \"keys_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/keys{/key_id}\",\n" +
+            "      \"collaborators_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/collaborators{/collaborator}\",\n" +
+            "      \"teams_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/teams\",\n" +
+            "      \"hooks_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/hooks\",\n" +
+            "      \"issue_events_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/issues/events{/number}\",\n" +
+            "      \"events_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/events\",\n" +
+            "      \"assignees_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/assignees{/user}\",\n" +
+            "      \"branches_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/branches{/branch}\",\n" +
+            "      \"tags_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/tags\",\n" +
+            "      \"blobs_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/git/blobs{/sha}\",\n" +
+            "      \"git_tags_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/git/tags{/sha}\",\n" +
+            "      \"git_refs_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/git/refs{/sha}\",\n" +
+            "      \"trees_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/git/trees{/sha}\",\n" +
+            "      \"statuses_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/statuses/{sha}\",\n" +
+            "      \"languages_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/languages\",\n" +
+            "      \"stargazers_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/stargazers\",\n" +
+            "      \"contributors_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/contributors\",\n" +
+            "      \"subscribers_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/subscribers\",\n" +
+            "      \"subscription_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/subscription\",\n" +
+            "      \"commits_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/commits{/sha}\",\n" +
+            "      \"git_commits_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/git/commits{/sha}\",\n" +
+            "      \"comments_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/comments{/number}\",\n" +
+            "      \"issue_comment_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/issues/comments{/number}\",\n" +
+            "      \"contents_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/contents/{+path}\",\n" +
+            "      \"compare_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/compare/{base}...{head}\",\n" +
+            "      \"merges_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/merges\",\n" +
+            "      \"archive_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/{archive_format}{/ref}\",\n" +
+            "      \"downloads_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/downloads\",\n" +
+            "      \"issues_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/issues{/number}\",\n" +
+            "      \"pulls_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/pulls{/number}\",\n" +
+            "      \"milestones_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/milestones{/number}\",\n" +
+            "      \"notifications_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/notifications{?since,all,participating}\",\n" +
+            "      \"labels_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/labels{/name}\",\n" +
+            "      \"releases_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/releases{/id}\",\n" +
+            "      \"deployments_url\": \"https://api.github.com/repos/iluwatar/java-design-patterns/deployments\",\n" +
+            "      \"created_at\": \"2014-08-09T16:45:18Z\",\n" +
+            "      \"updated_at\": \"2018-05-10T12:57:08Z\",\n" +
+            "      \"pushed_at\": \"2018-05-10T06:55:30Z\",\n" +
+            "      \"git_url\": \"git://github.com/iluwatar/java-design-patterns.git\",\n" +
+            "      \"ssh_url\": \"git@github.com:iluwatar/java-design-patterns.git\",\n" +
+            "      \"clone_url\": \"https://github.com/iluwatar/java-design-patterns.git\",\n" +
+            "      \"svn_url\": \"https://github.com/iluwatar/java-design-patterns\",\n" +
+            "      \"homepage\": \"http://java-design-patterns.com\",\n" +
+            "      \"size\": 17599,\n" +
+            "      \"stargazers_count\": 33238,\n" +
+            "      \"watchers_count\": 33238,\n" +
+            "      \"language\": \"Java\",\n" +
+            "      \"has_issues\": true,\n" +
+            "      \"has_projects\": false,\n" +
+            "      \"has_downloads\": true,\n" +
+            "      \"has_wiki\": true,\n" +
+            "      \"has_pages\": true,\n" +
+            "      \"forks_count\": 10735,\n" +
+            "      \"mirror_url\": null,\n" +
+            "      \"archived\": false,\n" +
+            "      \"open_issues_count\": 173,\n" +
+            "      \"license\": {\n" +
+            "        \"key\": \"mit\",\n" +
+            "        \"name\": \"MIT License\",\n" +
+            "        \"spdx_id\": \"MIT\",\n" +
+            "        \"url\": \"https://api.github.com/licenses/mit\"\n" +
+            "      },\n" +
+            "      \"forks\": 10735,\n" +
+            "      \"open_issues\": 173,\n" +
+            "      \"watchers\": 33238,\n" +
+            "      \"default_branch\": \"master\",\n" +
+            "      \"score\": 1.0\n" +
+            "    }\n" +
+            "  ]\n" +
             "}\n";
 
 
-    public static String SINGLE_FAIL_SEARCH_REPOSITORY = "{\n"+
-            "  \"message\": \"Validation Failed\",\n"+
-            "  \"errors\": [\n"+
-            "    {\n"+
-            "      \"message\": \"None of the search qualifiers apply to this search type.\",\n"+
-            "      \"resource\": \"Search\",\n"+
-            "      \"field\": \"q\",\n"+
-            "      \"code\": \"invalid\"\n"+
-            "    }\n"+
-            "  ],\n"+
-            "  \"documentation_url\": \"https://developer.github.com/v3/search/\"\n"+
+    public static String SINGLE_FAIL_SEARCH_REPOSITORY = "{\n" +
+            "  \"message\": \"Validation Failed\",\n" +
+            "  \"errors\": [\n" +
+            "    {\n" +
+            "      \"message\": \"None of the search qualifiers apply to this search type.\",\n" +
+            "      \"resource\": \"Search\",\n" +
+            "      \"field\": \"q\",\n" +
+            "      \"code\": \"invalid\"\n" +
+            "    }\n" +
+            "  ],\n" +
+            "  \"documentation_url\": \"https://developer.github.com/v3/search/\"\n" +
             "}\n";
 
 }

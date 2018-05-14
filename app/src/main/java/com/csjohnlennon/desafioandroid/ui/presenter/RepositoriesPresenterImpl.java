@@ -32,11 +32,16 @@ public class RepositoriesPresenterImpl implements RepositoriesPresenter {
             public void onResponse(Call<RepositoryResult> call, Response<RepositoryResult> response) {
 
                 try {
-                    RepositoryResult repositoryResult = response.body();
-                    if (repositoryResult.items.size() > 0) {
-                        repositorieView.populateRepositorie(repositoryResult.items);
-                        RepositoriesActivity.PAGE++;
+
+                    if (response.isSuccessful()) {
+                        if (response.body().items.size() > 0) {
+                            RepositoriesActivity.PAGE++;
+                            repositorieView.populateRepositorie(response.body().items);
+                        }
+                    } else {
+                        repositorieView.toggleLoader();
                     }
+
                 } catch (NullPointerException e) {
                     e.printStackTrace();
                 }

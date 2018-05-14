@@ -24,12 +24,12 @@ import butterknife.ButterKnife;
 
 public class RepositoriesActivity extends AppCompatActivity implements RepositorieView {
 
-    public static int PAGE = 0;
+    public static int PAGE = 1;
     public static String REPOSITORY_LIST = ".repositories";
-    public static String REPOSITORY_LIST_POSITION = "position";
+    public static String REPOSITORY_LIST_POSITION = ".position";
     private List<Repository> repositories;
 
-    @BindView(R.id.repositories_list_recycler_view)
+    @BindView(R.id.list_recycler_view)
     RecyclerView repositories_list_recycler_view;
 
     @BindView(R.id.noresults_text_view)
@@ -41,7 +41,7 @@ public class RepositoriesActivity extends AppCompatActivity implements Repositor
     private LinearLayoutManager layoutManager;
     private EndlessRecyclerViewScrollListener scrollListener;
     private RepositoryAdapter adapter;
-    private RepositoriesPresenterImpl repositoriesPresenter;
+    private RepositoriesPresenterImpl presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +57,7 @@ public class RepositoriesActivity extends AppCompatActivity implements Repositor
             adapter.add(savedInstanceState.<Repository>getParcelableArrayList(REPOSITORY_LIST));
             repositories_list_recycler_view.setVerticalScrollbarPosition(savedInstanceState.getInt(REPOSITORY_LIST_POSITION));
         } else {
-            loadPage(PAGE);
+            loadPage();
         }
 
     }
@@ -65,15 +65,15 @@ public class RepositoriesActivity extends AppCompatActivity implements Repositor
     public void initialize() {
 
         repositories = new ArrayList<>();
-        repositoriesPresenter = new RepositoriesPresenterImpl();
-        repositoriesPresenter.addView(this);
+        presenter = new RepositoriesPresenterImpl();
+        presenter.addView(this);
         adapter = new RepositoryAdapter(this, repositories);
 
         layoutManager = new LinearLayoutManager(this);
         scrollListener = new EndlessRecyclerViewScrollListener(layoutManager) {
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
-                loadPage(page);
+                loadPage();
             }
         };
 
@@ -86,13 +86,13 @@ public class RepositoriesActivity extends AppCompatActivity implements Repositor
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        repositoriesPresenter.removeView();
+        presenter.removeView();
     }
 
-    public void loadPage(int page) {
+    public void loadPage() {
         progressBar.setVisibility(View.VISIBLE);
         noresults_text_view.setVisibility(View.GONE);
-        repositoriesPresenter.search(page);
+        presenter.search(PAGE);
     }
 
     @Override
@@ -110,11 +110,36 @@ public class RepositoriesActivity extends AppCompatActivity implements Repositor
     }
 
     @Override
+    public void toggleLoader() {
+        switch (progressBar.getVisibility()) {
+            case View.GONE:
+                progressBar.setVisibility(View.VISIBLE);
+                break;
+            case View.VISIBLE:
+                progressBar.setVisibility(View.GONE);
+                break;
+        }
+    }
+
+    @Override
+    public void toggleNoResultsInfo() {
+        switch (noresults_text_view.getVisibility()) {
+            case View.GONE:
+                noresults_text_view.setVisibility(View.VISIBLE);
+                break;
+            case View.VISIBLE:
+                noresults_text_view.setVisibility(View.GONE);
+                break;
+        }
+    }
+
+    @Override
     public void populateRepositorie(List<Repository> repositoryList) {
-        repositories = repositoryList;
-        if (repositories.size() > 0) {
+        repositories.addAll(repositoryList);
+        adapter.add(repositoryList);
+        int count = repositories_list_recycler_view.getAdapter().getItemCount();
+        if(count > 0) {
             showResults();
-            adapter.add(repositories);
         } else {
             hideResults();
         }
@@ -126,15 +151,15 @@ public class RepositoriesActivity extends AppCompatActivity implements Repositor
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState) {
-        outState.putParcelableArrayList(REPOSITORY_LIST, (ArrayList<? extends Parcelable>) repositories);
-        outState.putInt("position", repositories_list_recycler_view.getVerticalScrollbarPosition());
-        outState.putInt("page", PAGE);
+    protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
+        outState.putParcelableArrayList(REPOSITORY_LIST, (ArrayList<? extends Parcelable>) repositories);
+        outState.putInt(REPOSITORY_LIST_POSITION, repositories_list_recycler_view.getVerticalScrollbarPosition());
+        outState.putInt("page", PAGE);
     }
 
     @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         PAGE = savedInstanceState.getInt("page");
         adapter.clear();

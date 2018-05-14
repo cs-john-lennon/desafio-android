@@ -22,6 +22,8 @@ public class Repository implements Parcelable {
     @SerializedName("owner")
     public Owner owner;
 
+    public Repository() {}
+
     protected Repository(Parcel in) {
         name = in.readString();
         description = in.readString();

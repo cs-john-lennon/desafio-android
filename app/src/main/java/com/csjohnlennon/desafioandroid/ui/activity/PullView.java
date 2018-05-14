@@ -1,12 +1,12 @@
 package com.csjohnlennon.desafioandroid.ui.activity;
 
-import com.csjohnlennon.desafioandroid.network.model.Repository;
+import com.csjohnlennon.desafioandroid.network.model.Pull;
 
 import java.util.List;
 
-public interface RepositorieView {
+public interface PullView {
 
-    void populateRepositorie(List<Repository> repositoryList);
+    void populate(List<Pull> pullList);
 
     void showError(String msg);
 
@@ -17,5 +17,7 @@ public interface RepositorieView {
     void toggleLoader();
 
     void toggleNoResultsInfo();
+
+    void openInWebBrowser(String url);
 
 }
