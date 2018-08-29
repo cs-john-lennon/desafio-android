@@ -5,9 +5,7 @@ import android.support.test.rule.ActivityTestRule;
 
 import com.csjohnlennon.desafioandroid.mocks.Mocks;
 import com.csjohnlennon.desafioandroid.network.APIClient;
-import com.csjohnlennon.desafioandroid.network.model.Owner;
-import com.csjohnlennon.desafioandroid.network.model.Repository;
-import com.csjohnlennon.desafioandroid.ui.activity.PullActivity;
+import com.csjohnlennon.desafioandroid.model.Repository;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -47,14 +45,14 @@ public class PullActivityTest {
         server.enqueue(new MockResponse().setResponseCode(200).setBody(Mocks.SUCCESS_SEARCH_PULLS));
 
         Owner owner = new Owner();
-        owner.login = "iluwatar";
-        owner.avatarUrl = "https://avatars1.githubusercontent.com/u/582346?v=4";
+        owner.setLogin("iluwatar");
+        owner.setAvatarUrl("https://avatars1.githubusercontent.com/u/582346?v=4");
 
         Repository repository = new Repository();
-        repository.name = "java-design-patterns";
-        repository.description = "Design patterns implemented in Java";
-        repository.forks = 10735;
-        repository.stargazers_count = 33238;
+        repository.setName("java-design-patterns");
+        repository.setDescription("Design patterns implemented in Java");
+        repository.setForks(10735);
+        repository.setStargazers_count(33238);
 
         Intent intent = new Intent();
         intent.putExtra(PullActivity.REPOSITORY_KEY, repository);
@@ -73,14 +71,14 @@ public class PullActivityTest {
         server.enqueue(new MockResponse().setResponseCode(400).setBody(Mocks.FAIL_SEARCH_PULLS));
 
         Owner owner = new Owner();
-        owner.login = "iluwatar";
-        owner.avatarUrl = "https://avatars1.githubusercontent.com/u/582346?v=4";
+        owner.setLogin("iluwatar");
+        owner.setAvatarUrl("https://avatars1.githubusercontent.com/u/582346?v=4");
 
         Repository repository = new Repository();
-        repository.name = "java-design-patterns";
-        repository.description = "Design patterns implemented in Java";
-        repository.forks = 10735;
-        repository.stargazers_count = 33238;
+        repository.setName("java-design-patterns");
+        repository.setDescription("Design patterns implemented in Java");
+        repository.setForks(10735);
+        repository.setStargazers_count(33238);
 
         Intent intent = new Intent();
         intent.putExtra(PullActivity.REPOSITORY_KEY, repository);

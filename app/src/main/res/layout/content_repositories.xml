@@ -8,7 +8,7 @@
 
     <ProgressBar
         android:visibility="gone"
-        android:id="@+id/progressBar"
+        android:id="@+id/defaultprogressBar"
         style="?android:attr/progressBarStyle"
         android:paddingTop="2dp"
         android:paddingBottom="2dp"
@@ -18,7 +18,7 @@
 
     <android.support.v7.widget.RecyclerView
         android:visibility="gone"
-        android:id="@+id/list_recycler_view"
+        android:id="@+id/recyclerViewRepositories"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="8dp"
@@ -26,7 +26,7 @@
 
     <TextView
         android:visibility="visible"
-        android:id="@+id/noresults_text_view"
+        android:id="@+id/defaultErrorMessage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"

@@ -9,8 +9,7 @@ import android.support.test.runner.AndroidJUnit4;
 
 import com.csjohnlennon.desafioandroid.mocks.Mocks;
 import com.csjohnlennon.desafioandroid.network.APIClient;
-import com.csjohnlennon.desafioandroid.ui.activity.PullActivity;
-import com.csjohnlennon.desafioandroid.ui.activity.RepositoriesActivity;
+import com.csjohnlennon.desafioandroid.view.activity.RepositoriesActivity;
 
 import org.hamcrest.Matcher;
 import org.junit.Before;

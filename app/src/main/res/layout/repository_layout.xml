@@ -1,129 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="180dp"
-    android:orientation="horizontal"
-    android:padding="4dp">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content">
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/cvRepository"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:background="@color/cardview_light_background"
-        android:elevation="2dp">
+  <TextView
+    android:id="@+id/repositoryName"
+    android:textStyle="bold"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:padding="8dp"
+    android:maxLength="20"
+    android:maxLines="1"
+    android:textColor="@color/colorPrimary"
+    android:textSize="@dimen/repository_name_text"
+    app:layout_constraintEnd_toStartOf="@+id/avatar"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:text="@tools:sample/first_names"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:weightSum="1">
+  <TextView
+    android:id="@+id/repositoryDescription"
+    android:textStyle="bold"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginLeft="8dp"
+    android:maxLines="2"
+    android:textSize="@dimen/repository_description_text"
+    app:layout_constraintEnd_toStartOf="@id/avatar"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/repositoryName"
+    tools:text="@tools:sample/lorem/random"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight=".3"
-                android:orientation="vertical"
-                android:weightSum="1">
+  <ImageView
+    android:id="@+id/avatar"
+    android:layout_width="70dp"
+    android:layout_height="70dp"
+    android:layout_margin="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginRight="8dp"
+    android:src="@drawable/ic_user"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.0"
+    tools:src="@tools:sample/avatars"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".2"
-                    android:orientation="vertical">
+  <TextView
+    android:id="@+id/userLogin"
+    android:textStyle="bold"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginEnd="28dp"
+    android:layout_marginRight="28dp"
+    android:textColor="@color/colorPrimary"
+    android:textSize="@dimen/user_login_text"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/avatar"
+    tools:text="@tools:sample/last_names"/>
 
-                    <TextView
-                        android:id="@+id/tvName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="fill_horizontal"
-                        android:maxLength="20"
-                        android:maxLines="2"
-                        android:padding="8dp"
-                        android:textColor="@android:color/secondary_text_light"
-                        android:textSize="16dp"
-                        android:textStyle="bold" />
+  <ImageView
+    android:id="@+id/imageStargazesCount"
+    android:layout_width="24sp"
+    android:layout_height="24sp"
+    android:layout_margin="8dp"
+    android:layout_marginBottom="8dp"
+    android:src="@drawable/ic_star"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/repositoryDescription"/>
 
-                    <TextView
-                        android:id="@+id/tvDescription"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="fill_horizontal"
-                        android:maxLength="120"
-                        android:padding="8dp"
-                        android:textSize="12dp"
-                        android:textStyle="bold" />
+  <TextView
+    android:id="@+id/stargazersCount"
+    android:textStyle="bold"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:textColor="@color/colorAccent"
+    android:textSize="@dimen/stargazes_count_text"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/imageStargazesCount"
+    app:layout_constraintTop_toBottomOf="@+id/repositoryDescription"
+    tools:text="100"/>
 
-                </LinearLayout>
+  <ImageView
+    android:id="@+id/imageForksCount"
+    android:layout_width="24sp"
+    android:layout_height="24sp"
+    android:layout_margin="8dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginLeft="8dp"
+    android:src="@drawable/ic_fork"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/stargazersCount"
+    app:layout_constraintTop_toBottomOf="@+id/repositoryDescription"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="bottom"
-                    android:layout_weight=".8"
-                    android:orientation="horizontal"
-                    android:padding="8dp">
+  <TextView
+    android:id="@+id/forksCount"
+    android:textStyle="bold"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginLeft="8dp"
+    android:textColor="@color/colorAccent"
+    android:textSize="@dimen/stargazes_count_text"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/imageForksCount"
+    app:layout_constraintTop_toBottomOf="@+id/repositoryDescription"
+    tools:text="100"/>
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="8sp"
-                        android:src="@drawable/ic_star" />
-
-                    <TextView
-                        android:id="@+id/tvStargazersCount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="8sp"
-                        android:textColor="@color/colorAccent" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="8sp"
-                        android:paddingRight="8sp"
-                        android:src="@drawable/ic_fork" />
-
-                    <TextView
-                        android:id="@+id/tvForksCount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="8sp"
-                        android:textColor="@color/colorAccent" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight=".7"
-                android:background="@color/colorPrimaryDark"
-                android:orientation="vertical"
-                android:padding="10dp">
-
-                <ImageView
-                    android:id="@+id/ivAvatarUrl"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:layout_gravity="top"
-                    android:layout_marginTop="25dp"
-                    android:gravity="center_horizontal"
-                    android:src="@drawable/ic_user" />
-
-                <TextView
-                    android:id="@+id/tvLogin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:padding="8dp"
-                    android:textColor="@android:color/background_light"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </android.support.v7.widget.CardView>
-
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

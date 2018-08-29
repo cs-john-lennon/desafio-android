@@ -1,4 +1,4 @@
-package com.csjohnlennon.desafioandroid.ui.widget;
+package com.csjohnlennon.desafioandroid.view.widget;
 
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
