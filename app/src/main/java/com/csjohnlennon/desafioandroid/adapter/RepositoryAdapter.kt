@@ -13,10 +13,8 @@ class RepositoryAdapter : RecyclerView.Adapter<RepositoryAdapter.RepositoryHolde
     private val repositories = arrayListOf<RepositoryResponse>()
 
     fun updateList(items: List<RepositoryResponse>? = null) {
-        items?.let {
-            repositories.addAll(it)
-            notifyDataSetChanged()
-        }
+        repositories.addAll(items!!)
+        notifyDataSetChanged()
     }
 
     override fun onBindViewHolder(holder: RepositoryHolder, position: Int) {

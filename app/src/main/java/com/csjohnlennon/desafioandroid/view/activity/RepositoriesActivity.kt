@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.widget.ProgressBar
 import android.widget.TextView
 import com.csjohnlennon.desafioandroid.R
@@ -20,9 +21,6 @@ class RepositoriesActivity : AppCompatActivity() {
     private var layoutManager = LinearLayoutManager(this)
     private var scrollListener: EndlessRecyclerViewScrollListener? = null
     private lateinit var viewModel: RepositoryViewModel
-    private lateinit var defaultErrorMessage: TextView
-    private lateinit var progressBar: ProgressBar
-    private lateinit var recyclerView: RecyclerView
 
     companion object {
         private var PAGE = 1
@@ -31,26 +29,21 @@ class RepositoriesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_repositories)
-        //setupViews()
-        setupViewModel()
         setupRecyclerView()
+        setupViewModel()
     }
 
     private fun setupViewModel() {
         viewModel = ViewModelProviders.of(this).get(RepositoryViewModel::class.java)
         viewModel.fetch(PAGE)
         viewModel.getRepositories().observe(this, Observer {
-            it?.let { adapter.updateList(it.repositories) }
+            it?.let {
+                adapter.updateList(it.repositories) }
         })
     }
 
-    private fun setupViews() {
-        defaultErrorMessage = defaultErrorMessage
-        progressBar = defaultprogressBar
-    }
-
     private fun setupRecyclerView() {
-        recyclerView = recyclerViewRepositories
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewRepositories)
         recyclerView.addOnScrollListener(scrollListener)
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = adapter
