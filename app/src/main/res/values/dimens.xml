@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="user_login_text">12sp</dimen>
+  <dimen name="repository_name_text">16dp</dimen>
+  <dimen name="repository_description_text">12dp</dimen>
+  <dimen name="stargazes_count_text">12sp</dimen>
+  <dimen name="layout_margin_8">8dp</dimen>
+  <dimen name="layout_margin_12">12dp</dimen>
+  <dimen name="layout_margin_16">16dp</dimen>
+  <dimen name="image_stargazes_count_size">24sp</dimen>
+  <dimen name="user_login_image_default_start_end_margin">28dp</dimen>
+  <dimen name="avatar_image_size">70dp</dimen>
+</resources>
